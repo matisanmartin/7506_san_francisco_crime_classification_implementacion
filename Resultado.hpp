@@ -26,6 +26,9 @@ class Resultado{
 		~Resultado();
 		double buscarResultado(string clave);
 		void setResultado(string clave, double valor);
+		map<string,double> getResultados() const;
 };
+
+ostream& operator<<(ostream& os, const Resultado &res);
 
 #endif

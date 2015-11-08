@@ -7,6 +7,7 @@
 #include <sstream>
 #include <ostream>
 #include "EventoTest.hpp"
+#include "Resultado.hpp"
 
 using namespace std;
 
@@ -15,6 +16,16 @@ EventoTest::~EventoTest(){}
 
 string EventoTest::getId() const{return id;}
 void EventoTest::setId(string nuevoId){id=nuevoId;}
+
+Resultado EventoTest::getResultado()
+{
+	return res;
+}
+
+void EventoTest::setResultado(string clave, double valor)
+{
+	res.setResultado(clave,valor);
+}
 
 istream& operator>>(istream& is, EventoTest &evento)
 {	
@@ -59,14 +70,21 @@ istream& operator>>(istream& is, EventoTest &evento)
 	return is;
 }
 
+/*
+ Imprime por ostream id+el arreglo de resultados.
+*/
 ostream& operator<<(ostream& os, EventoTest &ev)
 {
-	os << ev.getId() + ","
+
+//Para pruebas
+/*	os << ev.getId() + ","
 		  + ev.getFecha() + ","
 		  + ev.getDia() + ","
 		  + ev.getDistrito() + ","
 		  + ev.getCoordenadaX() + ","
-		  + ev.getCoordenadaY() + '\n';
+		  + ev.getCoordenadaY() + '\n'; */
+
+    os << ev.getId() << ev.getResultado() << "\n";
 
 	return os;
 

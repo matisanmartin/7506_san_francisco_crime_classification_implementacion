@@ -2,6 +2,7 @@
 #define EVENTO_TEST_H
 
 #include "Evento.hpp"
+#include "Resultado.hpp"
 /*
 	Esta clase modela un evento proveniente del archivo de test
 	Hereda sus atributos de Evento y la idea es reutilizar todo
@@ -11,11 +12,14 @@ class EventoTest : public Evento
 {
 	protected:
 		string id;
+		Resultado res;
 	public:
 		EventoTest();
 		~EventoTest();
 		string getId() const;
 		void setId(string nuevoId);
+		void setResultado(string clave, double valor);
+		Resultado getResultado();
 };
 
 istream& operator>>(istream& is, EventoTest &ev);
