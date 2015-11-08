@@ -63,11 +63,17 @@ ostream& operator<<(ostream& os, const Resultado &res)
 		// por ahora para evitar meter la ',' al final de la linea
 		// buscar si hay alguna manera de hacerlo haciendo un peek
 		// o algo por el estilo
-		if(it->first != "WEAPON LAWS")
+		//if(it->first != "WEAPON LAWS")
 			resultado += ",";
-		else
-			resultado += "\n";
+		//else
+			//resultado += "\n";
 	}
+
+	//alternativa más linda, la dejo comentada
+	//borra el ultimo caracter
+	resultado.erase(resultado.end()-1);
+	resultado += "\0\n";//por las dudas le meto el \0\n
+
 
 	os << resultado;
 
