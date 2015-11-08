@@ -7,6 +7,12 @@
 
 using namespace std;
 
+/*
+ Clase que modela un "evento", un row del archivo de entrenamiento
+ Posee como atributos todos los datos que se consideran utiles
+ a la hora de realizar calculos,
+ según lo definido en el modelo desarrollado.
+*/
 class Evento 
 {
 	private:

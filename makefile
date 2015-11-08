@@ -1,6 +1,6 @@
 all: tp
 
-tp: main.o entrada_salida.o evento.o evento_test.o
+tp: main.o entrada_salida.o evento.o evento_test.o resultado.o
 	g++ -Wall -pedantic -o tp main.o entrada_salida.o evento.o evento_test.o
 
 entrada_salida.o: EntradaSalida.cpp EntradaSalida.hpp evento.hpp
@@ -12,7 +12,10 @@ evento.o: evento.cpp evento.hpp
 evento_test.o: EventoTest.cpp EventoTest.hpp
 	g++ -Wall -pedantic -c -o evento_test.o EventoTest.cpp
 
-main.o: main.cpp Evento.hpp EntradaSalida.hpp
+resultado.o: Resultado.cpp Resultado.hpp
+	g++ -Wall -pedantic -c -o resultado.o Resultado.cpp
+
+main.o: main.cpp Evento.hpp EntradaSalida.hpp Resultado.hpp
 	g++ -Wall -pedantic -c -o main.o main.cpp
 
 clean:
